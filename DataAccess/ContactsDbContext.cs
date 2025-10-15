@@ -16,7 +16,8 @@ namespace DataAccess // Agrupa las clases de esta capa.
         {
             base.OnModelCreating(modelBuilder);
             // Hacemos que el campo Email sea único (no se pueden repetir emails).
-            modelBuilder.Entity<Contact>().HasIndex(c => c.Email).IsUnique();
+            modelBuilder.Entity<Contact>()
+                    .HasIndex(c => c.Email).IsUnique();
         }
     }
 }

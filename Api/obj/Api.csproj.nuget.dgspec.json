@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fabian.ortega\\ContactsBakend\\Api\\Api.csproj": {}
+    "C:\\Users\\fabian.ortega\\ContactsBakend\\api\\Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fabian.ortega\\ContactsBakend\\Api\\Api.csproj": {
+    "C:\\Users\\fabian.ortega\\ContactsBakend\\api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabian.ortega\\ContactsBakend\\Api\\Api.csproj",
+        "projectUniqueName": "C:\\Users\\fabian.ortega\\ContactsBakend\\api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\Api\\Api.csproj",
+        "projectPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\api\\Api.csproj",
         "packagesPath": "C:\\Users\\fabian.ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\Api\\obj\\",
+        "outputPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fabian.ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -54,6 +54,14 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[9.0.10, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.6, )"
             }
           },
           "imports": [
@@ -191,11 +199,11 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.9, )"
+              "version": "[9.0.10, )"
             },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[9.0.4, )"
+              "version": "[9.0.10, )"
             }
           },
           "imports": [
