@@ -1,5 +1,7 @@
 using DataAccess;
 using Microsoft.EntityFrameworkCore;
+using BusinessLogic.Interfaces; 
+using BusinessLogic.Services; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,10 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ContactsDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Registra el repositorio y el servicio 
+builder.Services.AddScoped<IContactRepository, ContactRepository>(); 
+builder.Services.AddScoped<IContactService, ContactService>(); 
 
 var app = builder.Build();
 
