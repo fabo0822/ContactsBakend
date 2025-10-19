@@ -42,7 +42,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(); // Servir wwwroot (para imágenes)
 app.UseCors("FrontendPolicy");
 app.UseAuthorization();
 app.MapControllers();
