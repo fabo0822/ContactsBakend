@@ -9,6 +9,22 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// CORS para permitir al frontend (React) consumir la API
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("FrontendPolicy", policy =>
+    {
+        policy
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .WithOrigins(
+                "http://localhost:5173",
+                "http://localhost:3000"
+            )
+            .AllowCredentials();
+    });
+});
+
 builder.Services.AddDbContext<ContactsDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -25,6 +41,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("FrontendPolicy");
 app.UseAuthorization();
 app.MapControllers();
 
