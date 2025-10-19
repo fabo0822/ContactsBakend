@@ -47,30 +47,38 @@ namespace BusinessLogic.Services
             return await _repository.AddAsync(contact); // Añade el contacto
         }
 
-        public async Task UpdateAsync(Contact contact)
+        public async Task<Contact> UpdateAsync(int id, Contact contact)
         {
-            // Validaciones
-            if (string.IsNullOrWhiteSpace(contact.FirstName))
-                throw new ArgumentException("First name is required.");
-            if (string.IsNullOrWhiteSpace(contact.LastName))
-                throw new ArgumentException("Last name is required.");
-            if (string.IsNullOrWhiteSpace(contact.Email))
-                throw new ArgumentException("Email is required.");
-
             // Verificar que el contacto existe
-            var existing = await _repository.GetByIdAsync(contact.Id);
+            var existing = await _repository.GetByIdAsync(id);
             if (existing == null)
-                throw new ArgumentException($"Contact with ID {contact.Id} not found.");
+                throw new ArgumentException($"Contact with ID {id} not found.");
 
-            // Validar email único (si cambió)
-            if (!existing.Email.Equals(contact.Email, StringComparison.OrdinalIgnoreCase))
+            // Actualizar solo los campos que se proporcionan (cambios parciales)
+            if (!string.IsNullOrWhiteSpace(contact.FirstName))
+                existing.FirstName = contact.FirstName;
+            
+            if (!string.IsNullOrWhiteSpace(contact.LastName))
+                existing.LastName = contact.LastName;
+            
+            if (!string.IsNullOrWhiteSpace(contact.Email))
             {
-                var contacts = await _repository.GetAllAsync();
-                if (contacts.Any(c => c.Email.Equals(contact.Email, StringComparison.OrdinalIgnoreCase)))
-                    throw new ArgumentException("Email already exists.");
+                // Validar email único (si cambió)
+                if (!existing.Email.Equals(contact.Email, StringComparison.OrdinalIgnoreCase))
+                {
+                    var contacts = await _repository.GetAllAsync();
+                    if (contacts.Any(c => c.Email.Equals(contact.Email, StringComparison.OrdinalIgnoreCase)))
+                        throw new ArgumentException("Email already exists.");
+                }
+                existing.Email = contact.Email;
             }
 
-            await _repository.UpdateAsync(contact); // Actualiza el contacto
+            // Actualizar campos opcionales
+            existing.IsFavorite = contact.IsFavorite;
+            existing.ImageUrl = contact.ImageUrl;
+
+            await _repository.UpdateAsync(existing); // Actualiza el contacto
+            return existing; // Devuelve el contacto actualizado
         }
 
         public async Task DeleteAsync(int id)
@@ -83,14 +91,5 @@ namespace BusinessLogic.Services
             await _repository.DeleteAsync(id); // Elimina el contacto
         }
 
-        public async Task SetFavoriteAsync(int id, bool isFavorite)
-        {
-            var contact = await _repository.GetByIdAsync(id);
-            if (contact == null)
-                throw new ArgumentException($"Contact with ID {id} not found.");
-
-            contact.IsFavorite = isFavorite;
-            await _repository.UpdateAsync(contact);
-        }
     }
 }

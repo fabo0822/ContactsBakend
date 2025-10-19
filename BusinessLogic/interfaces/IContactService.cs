@@ -9,8 +9,7 @@ namespace BusinessLogic.Interfaces
         Task<IEnumerable<Contact>> GetAllAsync(); // Obtener todos los contactos
         Task<Contact> GetByIdAsync(int id); // Obtener un contacto por ID
         Task<Contact> AddAsync(Contact contact); // Añadir un contacto
-        Task UpdateAsync(Contact contact); // Actualizar un contacto
+        Task<Contact> UpdateAsync(int id, Contact contact); // Actualizar un contacto (cambios parciales)
         Task DeleteAsync(int id); // Eliminar un contacto
-        Task SetFavoriteAsync(int id, bool isFavorite); // Marcar o desmarcar favorito
     }
 }
