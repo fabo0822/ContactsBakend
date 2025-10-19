@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R70qs/ne9Tc=",
+  "dgSpecHash": "pSXREIbhPno=",
   "success": true,
-  "projectFilePath": "C:\\Users\\fabian.ortega\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj",
+  "projectFilePath": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabian.ortega\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\fabian.ortega\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

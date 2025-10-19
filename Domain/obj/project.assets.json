@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabian.ortega\\ContactsBakend\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\fabian.ortega\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fabian.ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"

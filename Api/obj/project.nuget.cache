@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gFziR5uWYHo=",
+  "dgSpecHash": "VEOjB5jR9Bc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\fabian.ortega\\ContactsBakend\\Api\\Api.csproj",
+  "projectFilePath": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\api\\Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabian.ortega\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\fabian.ortega\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

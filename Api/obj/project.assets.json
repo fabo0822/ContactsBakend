@@ -5240,11 +5240,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabian.ortega\\ContactsBakend\\Api\\Api.csproj",
+      "projectUniqueName": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\Api\\Api.csproj",
+      "projectPath": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\api\\Api.csproj",
       "packagesPath": "C:\\Users\\fabian.ortega\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\Api\\obj\\",
+      "outputPath": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fabian.ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -5259,11 +5259,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\fabian.ortega\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj": {
-              "projectPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj"
+            "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj": {
+              "projectPath": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj"
             },
-            "C:\\Users\\fabian.ortega\\ContactsBakend\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\fabian.ortega\\ContactsBakend\\Domain\\Domain.csproj"
+            "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\fabian.ortega\\Desktop\\ContactsBakend\\Domain\\Domain.csproj"
             }
           }
         }
