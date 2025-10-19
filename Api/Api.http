@@ -1,6 +1,43 @@
-@Api_HostAddress = http://localhost:5239
+@host = http://localhost:5239
+@json = application/json
 
-GET {{Api_HostAddress}}/weatherforecast/
-Accept: application/json
+### Listar contactos
+GET {{host}}/api/contacts
+Accept: {{json}}
 
-###
+### Obtener contacto por ID
+GET {{host}}/api/contacts/1
+Accept: {{json}}
+
+### Crear contacto
+POST {{host}}/api/contacts
+Content-Type: {{json}}
+
+{
+  "firstName": "Ada",
+  "lastName": "Lovelace",
+  "email": "ada@example.com",
+  "isFavorite": false
+}
+
+### Actualizar contacto
+PUT {{host}}/api/contacts/1
+Content-Type: {{json}}
+
+{
+  "id": 1,
+  "firstName": "Ada",
+  "lastName": "Lovelace",
+  "email": "ada@newmail.com",
+  "isFavorite": true
+}
+
+### Marcar como favorito
+PATCH {{host}}/api/contacts/1/favorite?value=true
+
+### Quitar de favoritos
+PATCH {{host}}/api/contacts/1/favorite?value=false
+
+### Eliminar contacto
+DELETE {{host}}/api/contacts/1
+
