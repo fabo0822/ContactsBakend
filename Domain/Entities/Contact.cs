@@ -25,5 +25,8 @@ namespace Domain.Entities
         public string Email { get; set; } // Email, debe ser único (lo configuramos después).
 
         public bool IsFavorite { get; set; } = false; // ¿Es favorito? Predeterminado false.
+
+        [StringLength(2048)]
+        public string? ImageUrl { get; set; } // URL pública de la imagen del contacto
     }
 }

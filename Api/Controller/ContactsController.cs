@@ -1,6 +1,8 @@
 using BusinessLogic.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using System.IO;
 
 namespace Api.Controllers
 {
@@ -88,6 +90,39 @@ namespace Api.Controllers
 			{
 				await _contactService.SetFavoriteAsync(id, value);
 				return NoContent();
+			}
+			catch (ArgumentException ex)
+			{
+				return NotFound(new { message = ex.Message });
+			}
+		}
+
+		[HttpPost("{id:int}/photo")]
+		[RequestSizeLimit(10_000_000)] // 10 MB
+		public async Task<IActionResult> UploadPhoto(int id, IFormFile file)
+		{
+			if (file == null || file.Length == 0)
+				return BadRequest(new { message = "File is required." });
+
+			try
+			{
+				var contact = await _contactService.GetByIdAsync(id);
+
+				var uploadsRoot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+				Directory.CreateDirectory(uploadsRoot);
+
+				var fileName = $"contact_{id}_{Guid.NewGuid():N}{Path.GetExtension(file.FileName)}";
+				var filePath = Path.Combine(uploadsRoot, fileName);
+				using (var stream = System.IO.File.Create(filePath))
+				{
+					await file.CopyToAsync(stream);
+				}
+
+				var publicUrl = $"/uploads/{fileName}";
+				contact.ImageUrl = publicUrl;
+				await _contactService.UpdateAsync(contact);
+
+				return Ok(new { imageUrl = publicUrl });
 			}
 			catch (ArgumentException ex)
 			{
