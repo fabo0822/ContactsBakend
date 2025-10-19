@@ -1,0 +1,36 @@
+### 1. GET /contacts - Obtener todos los contactos
+GET https://localhost:7000/api/contacts
+Content-Type: application/json
+
+###
+
+### 2. POST /contacts - Crear nuevo contacto
+POST https://localhost:7000/api/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Juan",
+  "lastName": "Pérez",
+  "email": "juan.perez@example.com",
+  "isFavorite": true,
+  "imageUrl": "https://example.com/photo.jpg"
+}
+
+###
+
+### 3. PUT /contacts/{id} - Actualizar contacto (cambios parciales)
+PUT https://localhost:7000/api/contacts/1
+Content-Type: application/json
+
+{
+  "firstName": "Juan Carlos",
+  "isFavorite": false
+}
+
+###
+
+### 4. DELETE /contacts/{id} - Eliminar contacto
+DELETE https://localhost:7000/api/contacts/1
+Content-Type: application/json
+
+###
