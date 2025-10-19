@@ -1,8 +1,6 @@
 using BusinessLogic.Interfaces;
 using Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using System.IO;
 
 namespace Api.Controllers
 {
@@ -17,6 +15,7 @@ namespace Api.Controllers
 			_contactService = contactService;
 		}
 
+		// 1. GET /contacts - Obtener todos los contactos
 		[HttpGet]
 		public async Task<ActionResult<IEnumerable<Contact>>> GetAll()
 		{
@@ -24,27 +23,14 @@ namespace Api.Controllers
 			return Ok(contacts);
 		}
 
-		[HttpGet("{id:int}")]
-		public async Task<ActionResult<Contact>> GetById(int id)
-		{
-			try
-			{
-				var contact = await _contactService.GetByIdAsync(id);
-				return Ok(contact);
-			}
-			catch (ArgumentException ex)
-			{
-				return NotFound(new { message = ex.Message });
-			}
-		}
-
+		// 2. POST /contacts - Crear nuevo contacto
 		[HttpPost]
 		public async Task<ActionResult<Contact>> Create([FromBody] Contact contact)
 		{
 			try
 			{
 				var created = await _contactService.AddAsync(contact);
-				return CreatedAtAction(nameof(GetById), new { id = created.Id }, created);
+				return CreatedAtAction(nameof(GetAll), new { }, created);
 			}
 			catch (ArgumentException ex)
 			{
@@ -52,16 +38,14 @@ namespace Api.Controllers
 			}
 		}
 
+		// 3. PUT /contacts/{id} - Actualizar contacto (acepta cambios parciales)
 		[HttpPut("{id:int}")]
-		public async Task<IActionResult> Update(int id, [FromBody] Contact contact)
+		public async Task<ActionResult<Contact>> Update(int id, [FromBody] Contact contact)
 		{
-			if (id != contact.Id)
-				return BadRequest(new { message = "Route id and body id must match." });
-
 			try
 			{
-				await _contactService.UpdateAsync(contact);
-				return NoContent();
+				var updated = await _contactService.UpdateAsync(id, contact);
+				return Ok(updated);
 			}
 			catch (ArgumentException ex)
 			{
@@ -69,6 +53,7 @@ namespace Api.Controllers
 			}
 		}
 
+		// 4. DELETE /contacts/{id} - Eliminar contacto
 		[HttpDelete("{id:int}")]
 		public async Task<IActionResult> Delete(int id)
 		{
@@ -76,53 +61,6 @@ namespace Api.Controllers
 			{
 				await _contactService.DeleteAsync(id);
 				return NoContent();
-			}
-			catch (ArgumentException ex)
-			{
-				return NotFound(new { message = ex.Message });
-			}
-		}
-
-		[HttpPatch("{id:int}/favorite")]
-		public async Task<IActionResult> SetFavorite(int id, [FromQuery] bool value)
-		{
-			try
-			{
-				await _contactService.SetFavoriteAsync(id, value);
-				return NoContent();
-			}
-			catch (ArgumentException ex)
-			{
-				return NotFound(new { message = ex.Message });
-			}
-		}
-
-		[HttpPost("{id:int}/photo")]
-		[RequestSizeLimit(10_000_000)] // 10 MB
-		public async Task<IActionResult> UploadPhoto(int id, IFormFile file)
-		{
-			if (file == null || file.Length == 0)
-				return BadRequest(new { message = "File is required." });
-
-			try
-			{
-				var contact = await _contactService.GetByIdAsync(id);
-
-				var uploadsRoot = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
-				Directory.CreateDirectory(uploadsRoot);
-
-				var fileName = $"contact_{id}_{Guid.NewGuid():N}{Path.GetExtension(file.FileName)}";
-				var filePath = Path.Combine(uploadsRoot, fileName);
-				using (var stream = System.IO.File.Create(filePath))
-				{
-					await file.CopyToAsync(stream);
-				}
-
-				var publicUrl = $"/uploads/{fileName}";
-				contact.ImageUrl = publicUrl;
-				await _contactService.UpdateAsync(contact);
-
-				return Ok(new { imageUrl = publicUrl });
 			}
 			catch (ArgumentException ex)
 			{
