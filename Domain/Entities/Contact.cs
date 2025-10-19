@@ -11,22 +11,27 @@ namespace Domain.Entities
         [Key] // Esto indica que Id es la clave primaria (única para cada registro en la BD).
         public int Id { get; set; } // Id: Un número único auto-generado por la BD.
 
-        [Required] // Obligatorio: No puedes guardar sin esto.
-        [StringLength(100)] // Máximo 100 caracteres para evitar datos muy largos.
+        [Required(ErrorMessage = "El nombre es obligatorio")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "El nombre debe tener entre 2 y 100 caracteres")]
+        [RegularExpression(@"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$", ErrorMessage = "El nombre solo puede contener letras y espacios")]
         public string FirstName { get; set; } // Primer nombre.
 
-        [Required]
-        [StringLength(100)]
+        [Required(ErrorMessage = "El apellido es obligatorio")]
+        [StringLength(100, MinimumLength = 2, ErrorMessage = "El apellido debe tener entre 2 y 100 caracteres")]
+        [RegularExpression(@"^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$", ErrorMessage = "El apellido solo puede contener letras y espacios")]
         public string LastName { get; set; } // Apellido.
 
-        [Required]
-        [StringLength(255)]
-        [EmailAddress] // Valida que sea un email válido (ej: con @ y dominio).
+        [Required(ErrorMessage = "El email es obligatorio")]
+        [StringLength(255, ErrorMessage = "El email no puede exceder 255 caracteres")]
+        [EmailAddress(ErrorMessage = "El formato del email no es válido")]
+        [RegularExpression(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$", 
+            ErrorMessage = "El formato del email no es válido")]
         public string Email { get; set; } // Email, debe ser único (lo configuramos después).
 
         public bool IsFavorite { get; set; } = false; // ¿Es favorito? Predeterminado false.
 
-        [StringLength(2048)]
+        [StringLength(2048, ErrorMessage = "La URL de la imagen no puede exceder 2048 caracteres")]
+        [Url(ErrorMessage = "La URL de la imagen no tiene un formato válido")]
         public string? ImageUrl { get; set; } // URL pública de la imagen del contacto
     }
 }
