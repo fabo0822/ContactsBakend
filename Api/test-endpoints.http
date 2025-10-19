@@ -18,6 +18,20 @@ Content-Type: application/json
 
 ###
 
+### 2b. POST /contacts - Ejemplo con datos inválidos (para probar validaciones)
+POST https://localhost:7000/api/contacts
+Content-Type: application/json
+
+{
+  "firstName": "A",
+  "lastName": "",
+  "email": "email-invalido",
+  "isFavorite": true,
+  "imageUrl": "no-es-una-url"
+}
+
+###
+
 ### 3. PUT /contacts/{id} - Actualizar contacto (cambios parciales)
 PUT https://localhost:7000/api/contacts/1
 Content-Type: application/json
