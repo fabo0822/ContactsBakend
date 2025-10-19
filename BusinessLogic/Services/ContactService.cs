@@ -82,5 +82,15 @@ namespace BusinessLogic.Services
 
             await _repository.DeleteAsync(id); // Elimina el contacto
         }
+
+        public async Task SetFavoriteAsync(int id, bool isFavorite)
+        {
+            var contact = await _repository.GetByIdAsync(id);
+            if (contact == null)
+                throw new ArgumentException($"Contact with ID {id} not found.");
+
+            contact.IsFavorite = isFavorite;
+            await _repository.UpdateAsync(contact);
+        }
     }
 }
