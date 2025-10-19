@@ -11,5 +11,6 @@ namespace BusinessLogic.Interfaces
         Task<Contact> AddAsync(Contact contact); // Añadir un contacto
         Task UpdateAsync(Contact contact); // Actualizar un contacto
         Task DeleteAsync(int id); // Eliminar un contacto
+        Task SetFavoriteAsync(int id, bool isFavorite); // Marcar o desmarcar favorito
     }
 }
