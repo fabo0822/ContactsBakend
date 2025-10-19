@@ -31,18 +31,10 @@ namespace BusinessLogic.Services
 
         public async Task<Contact> AddAsync(Contact contact)
         {
-            // Validaciones
-            if (string.IsNullOrWhiteSpace(contact.FirstName))
-                throw new ArgumentException("First name is required.");
-            if (string.IsNullOrWhiteSpace(contact.LastName))
-                throw new ArgumentException("Last name is required.");
-            if (string.IsNullOrWhiteSpace(contact.Email))
-                throw new ArgumentException("Email is required.");
-
-            // Validar email único (simplificado, el índice único en la BD también lo asegura)
+            // Validar email único (el índice único en la BD también lo asegura)
             var existingContact = await _repository.GetAllAsync();
             if (existingContact.Any(c => c.Email.Equals(contact.Email, StringComparison.OrdinalIgnoreCase)))
-                throw new ArgumentException("Email already exists.");
+                throw new ArgumentException("El email ya existe en el sistema.");
 
             return await _repository.AddAsync(contact); // Añade el contacto
         }
@@ -52,7 +44,7 @@ namespace BusinessLogic.Services
             // Verificar que el contacto existe
             var existing = await _repository.GetByIdAsync(id);
             if (existing == null)
-                throw new ArgumentException($"Contact with ID {id} not found.");
+                throw new ArgumentException($"No se encontró el contacto con ID {id}.");
 
             // Actualizar solo los campos que se proporcionan (cambios parciales)
             if (!string.IsNullOrWhiteSpace(contact.FirstName))
@@ -68,7 +60,7 @@ namespace BusinessLogic.Services
                 {
                     var contacts = await _repository.GetAllAsync();
                     if (contacts.Any(c => c.Email.Equals(contact.Email, StringComparison.OrdinalIgnoreCase)))
-                        throw new ArgumentException("Email already exists.");
+                        throw new ArgumentException("El email ya existe en el sistema.");
                 }
                 existing.Email = contact.Email;
             }
@@ -86,7 +78,7 @@ namespace BusinessLogic.Services
             // Verificar que el contacto existe
             var contact = await _repository.GetByIdAsync(id);
             if (contact == null)
-                throw new ArgumentException($"Contact with ID {id} not found.");
+                throw new ArgumentException($"No se encontró el contacto con ID {id}.");
 
             await _repository.DeleteAsync(id); // Elimina el contacto
         }
