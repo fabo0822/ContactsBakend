@@ -27,6 +27,12 @@ namespace Api.Controllers
 		[HttpPost]
 		public async Task<ActionResult<Contact>> Create([FromBody] Contact contact)
 		{
+			// Las validaciones de Data Annotations se ejecutan automáticamente
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
 			try
 			{
 				var created = await _contactService.AddAsync(contact);
@@ -42,6 +48,18 @@ namespace Api.Controllers
 		[HttpPut("{id:int}")]
 		public async Task<ActionResult<Contact>> Update(int id, [FromBody] Contact contact)
 		{
+			// Validar que el ID sea válido
+			if (id <= 0)
+			{
+				return BadRequest(new { message = "El ID debe ser un número positivo." });
+			}
+
+			// Las validaciones de Data Annotations se ejecutan automáticamente
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
 			try
 			{
 				var updated = await _contactService.UpdateAsync(id, contact);
@@ -57,6 +75,12 @@ namespace Api.Controllers
 		[HttpDelete("{id:int}")]
 		public async Task<IActionResult> Delete(int id)
 		{
+			// Validar que el ID sea válido
+			if (id <= 0)
+			{
+				return BadRequest(new { message = "El ID debe ser un número positivo." });
+			}
+
 			try
 			{
 				await _contactService.DeleteAsync(id);
