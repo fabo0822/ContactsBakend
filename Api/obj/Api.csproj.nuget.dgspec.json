@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\api\\Api.csproj": {}
+    "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\api\\Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\api\\Api.csproj": {
+    "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\api\\Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\api\\Api.csproj",
+        "projectUniqueName": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\api\\Api.csproj",
         "projectName": "Api",
-        "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\api\\Api.csproj",
+        "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\api\\Api.csproj",
         "packagesPath": "C:\\Users\\fabian.ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\api\\obj\\",
+        "outputPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fabian.ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,11 +26,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\BusinessLogic\\BusinessLogic.csproj": {
-                "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\BusinessLogic\\BusinessLogic.csproj"
+              "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj": {
+                "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj"
               },
-              "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj"
+              "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj"
               }
             }
           }
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\BusinessLogic\\BusinessLogic.csproj": {
+    "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\BusinessLogic\\BusinessLogic.csproj",
+        "projectUniqueName": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj",
         "projectName": "BusinessLogic",
-        "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\BusinessLogic\\BusinessLogic.csproj",
+        "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\BusinessLogic\\BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\fabian.ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\BusinessLogic\\obj\\",
+        "outputPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\BusinessLogic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fabian.ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -109,11 +109,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj"
+              "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj"
               }
             }
           }
@@ -153,14 +153,14 @@
         }
       }
     },
-    "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\fabian.ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fabian.ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -175,8 +175,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj"
+              "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj"
               }
             }
           }
@@ -226,14 +226,14 @@
         }
       }
     },
-    "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj": {
+    "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\fabian.ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fabian.ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"

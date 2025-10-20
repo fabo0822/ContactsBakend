@@ -31,7 +31,6 @@ namespace Domain.Entities
         public bool IsFavorite { get; set; } = false; // ¿Es favorito? Predeterminado false.
 
         [StringLength(2048, ErrorMessage = "La URL de la imagen no puede exceder 2048 caracteres")]
-        [Url(ErrorMessage = "La URL de la imagen no tiene un formato válido")]
         public string? ImageUrl { get; set; } // URL pública de la imagen del contacto
     }
 }

@@ -2768,11 +2768,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\DataAccess.csproj",
+      "projectUniqueName": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\DataAccess.csproj",
+      "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\DataAccess.csproj",
       "packagesPath": "C:\\Users\\fabian.ortega\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\obj\\",
+      "outputPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fabian.ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -2787,8 +2787,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\Domain\\Domain.csproj"
+            "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\Domain\\Domain.csproj"
             }
           }
         }

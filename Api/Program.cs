@@ -20,7 +20,8 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .WithOrigins(
                 "http://localhost:5173",
-                "http://localhost:3000"
+                "http://localhost:3000",
+                "http://localhost:5174"
             )
             .AllowCredentials();
     });
@@ -43,6 +44,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseCors("FrontendPolicy");
+
+// Configurar middleware para servir archivos estáticos (imágenes)
+app.UseStaticFiles();
+
 app.UseAuthorization();
 app.MapControllers();
 

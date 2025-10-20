@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JR1zY85+aVk=",
+  "dgSpecHash": "WasHGWsKBY4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\fabian.ortega\\Pictures\\ContactsBakend-1\\DataAccess\\DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\fabian.ortega\\Downloads\\ContactsBakend\\DataAccess\\DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fabian.ortega\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\fabian.ortega\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

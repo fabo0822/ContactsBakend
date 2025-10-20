@@ -81,6 +81,32 @@ Elimina un contacto.
 
 **Respuesta:** 204 No Content (éxito)
 
+### 5. **POST /api/contacts/upload-image** 🆕
+Sube una imagen desde el PC y retorna la URL pública.
+
+**Request:** FormData con archivo de imagen
+- **Content-Type:** `multipart/form-data`
+- **Campo:** `file` (archivo de imagen)
+
+**Validaciones:**
+- ✅ Tipos permitidos: JPG, JPEG, PNG, GIF, BMP, WEBP
+- ✅ Tamaño máximo: 5MB
+- ✅ Nombres únicos generados automáticamente
+
+**Respuesta exitosa:**
+```json
+{
+  "message": "Imagen subida exitosamente.",
+  "imageUrl": "/images/12345678-1234-1234-1234-123456789abc.jpg",
+  "fileName": "12345678-1234-1234-1234-123456789abc.jpg",
+  "fileSize": 245760
+}
+```
+
+**Errores posibles:**
+- `400 Bad Request`: Archivo no enviado, tipo no permitido, o tamaño excedido
+- `500 Internal Server Error`: Error del servidor al guardar el archivo
+
 ## 🛠️ Tecnologías Utilizadas
 
 - **.NET 9**
